@@ -3,3 +3,10 @@ body {
 	background-color: #dddddd;
 
 }
+
+.navbar-brand{
+	padding: 0px;
+	padding-top: 6px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
