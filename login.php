@@ -1,4 +1,4 @@
-
+<?php include("assets/class.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCRUM</title>
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="../assets/css/login.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <form class="form-signin">
-        <div class="center-block"><img src="../assets/bilder/education.png" alt="Jensen Logga"></div>
+      <form class="form-signin" method="POST" action="./process.php?function=Login">
+        <div class="center-block"><img src="assets/img/education.png" alt="Jensen Logga"></div>
         <hr>
-        <input type="text" class="form-control" placeholder="Användarnamn" required autofocus>
-        <input type="password" class="form-control" placeholder="Lösenord" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Kom ihåg mig
-        </label>
+        <?php
+        $Error->show();
+        $Success->show();
+        ?>
+        <input type="text" name="username" class="form-control" placeholder="Användarnamn" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Lösenord" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
         <br>
         <div class="btn-group btn-group-justified">
@@ -27,9 +28,9 @@
           <a class="btn btn-default" href="#" title="">Ny användare?</a>
         </div>
         <a class="btn btn-default" href="" data-toggle="modal" data-target="#Cookies">Om Cookies</a>
-
-
-          <div class="modal fade" id="Cookies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </form>
+    </div>
+    <div class="modal fade" id="Cookies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -55,10 +56,7 @@
               </div>
             </div>
           </div>
-      </form>
-    </div>
-
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
