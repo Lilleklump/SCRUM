@@ -47,6 +47,6 @@
     <?php
   }
   ?>
-  <button class="btn btn-lg btn-primary" type="submit">Skapa elev</button>
+  <button class="btn btn-lg btn-primary" type="submit">Skapa användare</button>
 </form>
 <?php include("assets/_footer.php"); ?>

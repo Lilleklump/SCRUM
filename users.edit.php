@@ -6,7 +6,7 @@ $user_result = mysql_query("SELECT * FROM tbl_user WHERE user_id='".$user_id."' 
 $user_row = mysql_fetch_assoc($user_result);
 ?>
 <h1><?php echo $user_row['user_firstname']." ".$user_row['user_lastname'] ?></h1>
-<form method="POST" action="./process.php?function=editUser">
+<form method="POST" action="./process.php?function=editUser&user_id=<?php echo $user_row['user_id']; ?>">
   <?php
   $Error->show();
   $Success->show();
@@ -36,6 +36,6 @@ $user_row = mysql_fetch_assoc($user_result);
   }
   ?>
   <br>
-  <button class="btn btn-lg btn-primary" type="submit">Spara ändringar</button>
+  <button class="btn btn-lg btn-primary" type="submit">Spara ändringar</button> <a class="btn btn-danger btn-lg" href="users.delete.php?user_id=<?php echo $user_id; ?>">Radera användare</a>
 </form>
 <?php include("assets/_footer.php"); ?>

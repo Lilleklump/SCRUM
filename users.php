@@ -1,6 +1,10 @@
 <?php include("assets/_header.php"); ?>
 <?php if($_SESSION['usertype_id'] >= 3) { ?><a href="users.create.php"><span class="label label-primary">Skapa en användare</span></a><?php } ?>
 <h1>Användare</h1>
+<?php
+$Error->show();
+$Success->show();
+?>
 <table class="table table-hover">
   <thead>
     <tr>

@@ -6,7 +6,7 @@ $grade_id = mysql_real_escape_string($_GET['id']);
 $grade_result = mysql_query("SELECT * FROM tbl_grade WHERE grade_id = '".$grade_id."' LIMIT 1");
 $grade_row = mysql_fetch_assoc($grade_result);
 ?>
-<form method="POST" action="./process.php?function=editGrade">
+<form method="POST" action="./process.php?function=editGrade&grade_id=<?php echo $grade_id; ?>">
   <?php
   $Error->show();
   $Success->show();

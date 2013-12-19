@@ -32,7 +32,7 @@ if($Check->loggedIn() == false)
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php"><b>Nyheter</b></a></li>
-            <li><a href="course.php"><b>Kurser</b></a></li>
+            <li><a href="course.php"><b>Betyg</b></a></li>
             <?php if($_SESSION['usertype_id'] >= 3) { ?><li><a href="program.php">Program</a></li><?php } ?>
             <?php if($_SESSION['usertype_id'] >= 2) { ?><li><a href="users.php">Användare</a></li><?php } ?>
             <li><a href="contact.php"><b>Kontakt</b></a></li>

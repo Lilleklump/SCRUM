@@ -1,12 +1,13 @@
-<?php include("assets/_header.php"); ?>
-  <h1><?php echo $_SESSION['user_firstname']." ".$_SESSION['user_lastname'] ?></h1>
-  <form method="POST" action="./process.php?function=editProfile">
+<?php
+include("assets/_header.php");
+$result = mysql_query("SELECT * FROM tbl_user WHERE user_id='".$_SESSION['user_id']."' LIMIT 1");
+$row = mysql_fetch_assoc($result);
+?>
+<h1><?php echo $row['user_firstname']." ".$row['user_lastname'] ?></h1>
+<form method="POST" action="./process.php?function=editProfile">
     <?php
     $Error->show();
     $Success->show();
-
-    $result = mysql_query("SELECT * FROM tbl_user WHERE user_id='".$_SESSION['user_id']."' LIMIT 1");
-    $row = mysql_fetch_assoc($result);
     ?>
     <input type="text" name="firstname" class="form-control" placeholder="Förnamn" value="<?php echo $row['user_firstname'] ?>">
     <br>
@@ -17,5 +18,5 @@
     <input type="text" name="phone" class="form-control" placeholder="Telefonnummer" value="<?php echo $row['user_phonenumber'] ?>">
     <br>
     <button class="btn btn-lg btn-primary" type="submit">Spara ändringar</button>
-  </form>
+</form>
 <?php include("assets/_footer.php"); ?>

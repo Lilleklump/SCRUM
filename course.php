@@ -4,7 +4,11 @@ include("assets/_header.php");
 if($_SESSION['usertype_id'] == 1)
 {
   ?>
-  <h1>Kurser</h1>
+  <h1>Betyg</h1>
+  <?php
+  $Error->show();
+  $Success->show();
+  ?>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -12,6 +16,7 @@ if($_SESSION['usertype_id'] == 1)
         <td><strong>Start</strong></td>
         <td><strong>Slut</strong></td>
         <td><strong>Betyg</strong></td>
+        <td><strong>Kommentar</strong></td>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +32,7 @@ if($_SESSION['usertype_id'] == 1)
           <td><?php echo $course_row['course_startdate']; ?></td>
           <td><?php echo $course_row['course_enddate']; ?></td>
           <td><?php if($grade_row['grade_grade'] == "") { echo "Ej satt"; } else { echo $grade_row['grade_grade']; } ?></td>
+          <td><?php echo $grade_row['grade_comment']; ?></td>
         </tr>
         <?php
       }
@@ -38,8 +44,11 @@ if($_SESSION['usertype_id'] == 1)
 elseif ($_SESSION['usertype_id'] >= 2)
 {
   ?>
-  <h1>Kurser</h1>
+  <h1>Betyg</h1>
   <?php
+  $Error->show();
+  $Success->show();
+
   $course_result = mysql_query("SELECT * FROM tbl_course WHERE program_id = '".$_SESSION['user_program']."'");
   while($course_row = mysql_fetch_array($course_result))
   {

@@ -6,9 +6,9 @@
   $Error->show();
   $Success->show();
   ?>
-  <input type="text" name="title" class="form-control" placeholder="Ämne">
+  <input type="text" name="news_title" class="form-control" placeholder="Ämne">
   <br>
-  <textarea class="form-control" name="content" placeholder="Innehåll"></textarea>
+  <textarea class="form-control" name="news_content" placeholder="Innehåll"></textarea>
   <br>
   <button class="btn btn-lg btn-primary" type="submit">Skapa nyhet</button>
 </form>

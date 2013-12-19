@@ -1,5 +1,4 @@
 <?php include("assets/_header.php"); ?>
-<a href="users.create.php"><span class="label label-primary">Lägg till ett program</span></a>
 <h1>Program</h1>
 <?php
 $program_result = mysql_query("SELECT * FROM tbl_program");
